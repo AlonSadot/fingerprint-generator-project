@@ -31,6 +31,8 @@ class GeneratorCoach:
         self.opts.latent = 512
         self.opts.n_mlp = 8
         self.opts.start_iter = 0
+        self.opts.exp_dir = '/content/drive/MyDrive/MyExperiment'
+        
 
         # Initialize networks
         self.generator = Generator(self.opts.generator_image_size, self.opts.latent, self.opts.n_mlp,
