@@ -1,5 +1,5 @@
 from torch.utils.data import Dataset
-from PIL import Image
+from PIL import Image, ImageFile
 from utils import data_utils
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
