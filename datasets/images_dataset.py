@@ -2,6 +2,7 @@ from torch.utils.data import Dataset
 from PIL import Image
 from utils import data_utils
 
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 class ImageToImageDataset(Dataset):
 
@@ -15,7 +16,7 @@ class ImageToImageDataset(Dataset):
 	def __len__(self):
 		return len(self.source_paths)
 
-	def __getitem__(self, index):
+	def __getitem__(self, index):		
 		from_path = self.source_paths[index]
 		from_im = Image.open(from_path)
 		from_im = from_im.convert('RGB') if self.opts.input_nc == 3 else from_im.convert('L')
